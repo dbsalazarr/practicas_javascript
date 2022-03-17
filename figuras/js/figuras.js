@@ -20,49 +20,42 @@ function perimetroCuadrado( lado ) {
 } 
 
 // Triangulo
-let lado1, lado2, lado3, perimetroTriangulo, areaTriangulo, s
+let lado1, lado2, lado3, s
 lado1 = 8
 lado2 = 4
 lado3 = 10
-s = perimetroTriangulo/2
-perimetroTriangulo = lado1 + lado2 + lado3 
-areaTriangulo = Math.sqrt( s*(s - lado1)*(s - lado2)*(s-lado3) ) 
-console.group("Triangulo")
-console.log("El area del triangulo es: " + areaTriangulo)
-console.log("El perimetro del triangulo es: " + perimetroTriangulo)
-console.groupEnd()
+s = (lado1 + lado2 + lado3)/2
+function perimetroTriangulo( lado1, lado2, lado3){
+    return lado1 + lado2 + lado3 
+}
+function areaTriangulo(s, lado1, lado2, lado3){
+    return Math.sqrt( s*(s - lado1)*(s - lado2)*(s-lado3) ) 
+}
 
 
 // Circulo
-let radio, perimetroCirculo, areaCirculo
 const PI = Math.PI
-areaCirculo = PI*radio**2
-perimetroCirculo = 2*radio*PI
-
-console.group("Circulo")
-console.log("El area del circulo es: " + areaTriangulo)
-console.log("El perimetro del circulo es: " + perimetroTriangulo)
-console.groupEnd()
+function areaCirculo(radio){
+    return PI*radio**2
+}
+function perimetroCirculo(){
+    return 2*radio*PI
+}
 
 // Trapecio
-let baseMayor, baseMenor, altura, areaTrapecio
+let baseMayor, baseMenor, altura
 baseMayor = 10
 baseMenor = 5
 altura = 2
-areaTrapecio = (baseMenor + baseMenor)/2 * altura
+function areaTrapecio(baseMenor, baseMayor, altura){
 
-console.group("Trapecio")
-console.log("El area del trapecio es:" + areaTrapecio)
-console.groupEnd()
+    return (baseMenor + baseMenor)/2 * altura
+}
 
 // Elipse
-let ejeMenor, ejeMayor, areaElipse
+let ejeMenor, ejeMayor
 ejeMenor = 12
 ejeMayor = 23
-areaElipse = PI*ejeMayor*ejeMenor
-
-console.group("Elipse")
-console.log("El area de la elipse es:" + areaElipse)
-console.groupEnd()
-
-
+function areaElipse(ejeMenro, ejeMayor){
+    return PI*ejeMayor*ejeMenor
+}
