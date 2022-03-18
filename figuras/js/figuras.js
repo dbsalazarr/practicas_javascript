@@ -10,11 +10,20 @@ document.addEventListener('DOMContentLoaded', () => {
     - Trapecio
     - Elipse
 */
+let lblResultado = document.getElementById("lblResultado")
 
 // Cuadrado
 function areaCuadrado( lado ){
     return lado**2
 }
+
+document.getElementById("btnPerimetroCuadrado").addEventListener("click", () => {
+    let lado = parseInt( document.querySelector("#txtLadoCuadrado").value )
+    let per = perimetroCuadrado( lado )
+    lblResultado.innerHTML = `<p> El perimetro del cuadrado es: ${per} </p>`
+    
+})
+
 function perimetroCuadrado( lado ) {
     return lado*4  
 } 
