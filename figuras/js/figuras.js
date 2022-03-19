@@ -97,7 +97,7 @@ function areaCirculo(){
     let radio, area
     radio = leerEntrada("txtRadio")
     area = PI*radio**2
-    resultado = `<p> El perímetro del circulo es: ${ Math.round(area, 2)}</p>`
+    resultado = `<p> El perímetro del circulo es: ${ Math.round(area)}</p>`
     mostrarResultado( resultado)
 }
 
@@ -111,11 +111,16 @@ eventosButtons("btnAreaCirculo", areaCirculo)
 function areaTrapecio(){
     let baseMayor, baseMenor, altura, areaTrapecio
 
-    baseMayor = leerEntrada("txtBaseMenor")
-    baseMenor = leerEntrada("txtBaseMayor")
+    baseMenor = leerEntrada("txtBaseMenor")
+    baseMayor = leerEntrada("txtBaseMayor")
     altura = leerEntrada("txtAltura")
 
-    areaTrapecio = (baseMenor + baseMenor)/2 * altura
+    areaTrapecio = (baseMayor + baseMenor) / 2 * altura
+    console.group("Trapecio")
+    console.log("bMe " + baseMenor)
+    console.log("bMa " + baseMayor)
+    console.log("Alt " + altura)
+    console.groupEnd()
     resultado = `<p> El área del trapecio es: ${areaTrapecio}</p>`
     mostrarResultado( resultado )
 
