@@ -1,7 +1,3 @@
-document.addEventListener('DOMContentLoaded', () => {
-    console.log("El documento esta listo para ejecutar código JS")
-})
-
 /* 
     AREAS Y PERIMETROS
     - Cuadrado
@@ -10,8 +6,17 @@ document.addEventListener('DOMContentLoaded', () => {
     - Trapecio
     - Elipse
 */
+document.addEventListener('DOMContentLoaded', () => {
+    console.log("El documento esta listo para ejecutar código JS")
+})
+ // VARIABLES
+const PI = Math.PI
 let resultado = ""
 
+
+/* 
+    FUNCIONES
+*/
 // Cuadrado
 
 function eventosButtons( idButtons, calculateFunction ){
@@ -26,11 +31,6 @@ function leerEntrada( idEntrada ){
 function mostrarResultado( mensaje ) {
     lblResultado.innerHTML = mensaje
 }
-// document.getElementById("btnAreaCuadrado").addEventListener("click", () => {
-//     let lado = parseInt(document.querySelector("#txtLadoCuadrado").value)
-//     let area = areaCuadrado( lado )
-//     lblResultado.innerHTML = `<p> El area del cuadrado es: ${area} </p>`
-// })
 
 function areaCuadrado( ){
     let lado = leerEntrada("txtLadoCuadrado")
@@ -49,7 +49,9 @@ function perimetroCuadrado() {
 eventosButtons("btnAreaCuadrado", areaCuadrado )
 eventosButtons("btnPerimetroCuadrado", perimetroCuadrado)
 
-// TRIANGULO
+/*  
+    TRIANGULO
+*/
 
 function perimetroTriangulo(){
     let lado1, lado2, lado3, perimetroTriangulo
@@ -60,6 +62,8 @@ function perimetroTriangulo(){
     resultado = `<p>El perimetro del triangulo es: ${perimetroTriangulo}</p>`
     mostrarResultado(resultado)
 }
+
+// Para calcular el área del triangulo se hizo uso de la formula de Herón
 function areaTriangulo(){
     /* 
         Donde:
@@ -81,13 +85,21 @@ eventosButtons("btnAreaTriangulo", areaTriangulo)
 /* 
     CIRCULO
 */
-const PI = Math.PI
-function areaCirculo(radio){
+
+function perimetroCirculo(){
+    let radio, perimetro, resultado
+    radio = leerEntrada("txtRadio")
+    perimetro = 2*radio*PI
+    resultado = `<p> El perímetro del circulo es: ${superficieTriangulo}</p>`
+    mostrarResultado( resultado)
+}
+function areaCirculo(){
+    let radio, perimetro, resultado
     return PI*radio**2
 }
-function perimetroCirculo(){
-    return 2*radio*PI
-}
+
+eventosButtons("btnPerCirculo", perimetroCirculo)
+eventosButtons("btnAreaCirculo", areaCirculo)
 
 // Trapecio
 let baseMayor, baseMenor, altura
