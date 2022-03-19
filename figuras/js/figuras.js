@@ -87,14 +87,14 @@ eventosButtons("btnAreaTriangulo", areaTriangulo)
 */
 
 function perimetroCirculo(){
-    let radio, perimetro, resultado
+    let radio, perimetro
     radio = leerEntrada("txtRadio")
     perimetro = 2*radio*PI
     resultado = `<p> El perímetro del circulo es: ${Math.round(perimetro)}</p>`
     mostrarResultado( resultado)
 }
 function areaCirculo(){
-    let radio, area, resultado
+    let radio, area
     radio = leerEntrada("txtRadio")
     area = PI*radio**2
     resultado = `<p> El perímetro del circulo es: ${ Math.round(area, 2)}</p>`
@@ -107,14 +107,22 @@ eventosButtons("btnAreaCirculo", areaCirculo)
 /* 
     TRAPECIO
 */
-let baseMayor, baseMenor, altura
-baseMayor = 10
-baseMenor = 5
-altura = 2
-function areaTrapecio(baseMenor, baseMayor, altura){
 
-    return (baseMenor + baseMenor)/2 * altura
+function areaTrapecio(){
+    let baseMayor, baseMenor, altura, areaTrapecio
+
+    baseMayor = leerEntrada("txtBaseMenor")
+    baseMenor = leerEntrada("txtBaseMayor")
+    altura = leerEntrada("txtAltura")
+
+    areaTrapecio = (baseMenor + baseMenor)/2 * altura
+    resultado = `<p> El área del trapecio es: ${areaTrapecio}</p>`
+    mostrarResultado( resultado )
+
 }
+
+eventosButtons("btnAreaTrapecio", areaTrapecio)
+
 
 // Elipse
 let ejeMenor, ejeMayor
