@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     - Trapecio
     - Elipse
 */
-let lblResultado = document.getElementById("lblResultado")
+let resultado = ""
 
 // Cuadrado
 
@@ -19,10 +19,13 @@ function eventosButtons( idButtons, calculateFunction ){
     document.getElementById( idButtons ).addEventListener("click", calculateFunction)
 }
 
-eventosButtons("btnAreaCuadrado", areaCuadrado )
-eventosButtons("btnPerimetroCuadrado", perimetroCuadrado)
+function leerEntrada( idEntrada ){
+    return parseInt( document.getElementById( idEntrada ).value )
+}
 
-
+function mostrarResultado( mensaje ) {
+    lblResultado.innerHTML = mensaje
+}
 // document.getElementById("btnAreaCuadrado").addEventListener("click", () => {
 //     let lado = parseInt(document.querySelector("#txtLadoCuadrado").value)
 //     let area = areaCuadrado( lado )
@@ -30,27 +33,50 @@ eventosButtons("btnPerimetroCuadrado", perimetroCuadrado)
 // })
 
 function areaCuadrado( ){
-    let lado = parseInt( document.querySelector("#txtLadoCuadrado").value )
+    let lado = leerEntrada("txtLadoCuadrado")
     let area = lado**2
-    lblResultado.innerHTML = `<p> El perimetro del cuadrado es: ${area} </p>`
+    resultado = `<p> El perimetro del cuadrado es: ${area} </p>`
+    mostrarResultado( resultado )
 }
 
 function perimetroCuadrado() {
-    let lado = parseInt( document.querySelector("#txtLadoCuadrado").value)
+    let lado = leerEntrada("txtLadoCuadrado")
     let perimetro = lado*4
-    lblResultado.innerHTML = `<p> El perímetro del cuadrado es: ${perimetro}</p>`
+    resultado = `<p> El perímetro del cuadrado es: ${perimetro}</p>`
+    mostrarResultado( resultado )
 } 
+
+eventosButtons("btnAreaCuadrado", areaCuadrado )
+eventosButtons("btnPerimetroCuadrado", perimetroCuadrado)
 
 // TRIANGULO
 
-function perimetroTriangulo( lado1, lado2, lado3){
-    return lado1 + lado2 + lado3 
+function perimetroTriangulo(){
+    let lado1, lado2, lado3, perimetroTriangulo
+    lado1 = leerEntrada("txtLado1")
+    lado2 = leerEntrada("txtLado2")
+    lado3 = leerEntrada("txtLado3")
+    perimetroTriangulo = lado1 + lado2 + lado3
+    resultado = `<p>El perimetro del triangulo es: ${perimetroTriangulo}</p>`
+    mostrarResultado(resultado)
 }
-function areaTriangulo(s, lado1, lado2, lado3){
+function areaTriangulo(){
+    /* 
+        Donde:
+        s: es el semiperimetro del triangulo ( perimetro / 2)
+    */
+    let lado1, lado2, lado3, s, superficieTriangulo
+    lado1 = leerEntrada("txtLado1")
+    lado2 = leerEntrada("txtLado2")
+    lado3 = leerEntrada("txtLado3")
     s = (lado1 + lado2 + lado3)/2
-    return Math.sqrt( s*(s - lado1)*(s - lado2)*(s-lado3) ) 
+    superficieTriangulo = Math.sqrt( s*(s - lado1)*(s - lado2)*(s-lado3) ) 
+    resultado = `<p> El área del triangulo es: ${superficieTriangulo}</p>`
+    mostrarResultado( resultado )
 }
 
+eventosButtons("btnPerTriangulo", perimetroTriangulo)
+eventosButtons("btnAreaTriangulo", areaTriangulo)
 
 // Circulo
 const PI = Math.PI

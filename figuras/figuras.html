@@ -14,12 +14,11 @@
     
     <section>
         <h2> Calcula el área y perímetro de un cuadrado</h2>
-        <form action="txtLadoCuadrado">
+        <form action="">
             <label for="">¿Cual es la longitud del lado del cuadrado? Ingresa su tamaño:</label>
             <input id="txtLadoCuadrado" type="number">
             <button type="button" id="btnPerimetroCuadrado" > Calcular el Perimetro </button>
             <button type="button" id="btnAreaCuadrado" > Calcular el Área </button>
-            <label for="" id="lblResultado"></label>
         </form>
     </section>
 
@@ -33,10 +32,11 @@
             <label for="txtLado3">Lado 3</label>
             <input id="txtLado3" type="number">
 
-            <button type="button"> Calcular Perímetro </button>
-            <button type="button"> Calcular Área </button>
+            <button type="button" id="btnPerTriangulo"> Calcular Perímetro </button>
+            <button type="button" id="btnAreaTriangulo"> Calcular Área </button>
         </form>
     </section>
+    <label for="" id="lblResultado"></label>
     <script src="./js/figuras.js"></script>
 </body>
 </html>
