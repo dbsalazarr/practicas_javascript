@@ -114,7 +114,9 @@ function areaTrapecio(baseMenor, baseMayor, altura){
     return (baseMenor + baseMenor)/2 * altura
 }
 
-// Elipse
+/* 
+    ELIPSE
+ */
 let ejeMenor, ejeMayor
 ejeMenor = 12
 ejeMayor = 23
