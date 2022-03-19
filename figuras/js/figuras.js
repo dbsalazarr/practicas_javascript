@@ -19,7 +19,8 @@ function eventosButtons( idButtons, calculateFunction ){
     document.getElementById( idButtons ).addEventListener("click", calculateFunction)
 }
 
-eventosButtons("btnPerimetroCuadrado", areaCuadrado )
+eventosButtons("btnAreaCuadrado", areaCuadrado )
+eventosButtons("btnPerimetroCuadrado", perimetroCuadrado)
 
 
 // document.getElementById("btnAreaCuadrado").addEventListener("click", () => {
@@ -30,13 +31,14 @@ eventosButtons("btnPerimetroCuadrado", areaCuadrado )
 
 function areaCuadrado( ){
     let lado = parseInt( document.querySelector("#txtLadoCuadrado").value )
-    let perimetro = perimetroCuadrado( lado )
-    lblResultado.innerHTML = `<p> El perimetro del cuadrado es: ${perimetro} </p>`
-    return lado**2
+    let area = lado**2
+    lblResultado.innerHTML = `<p> El perimetro del cuadrado es: ${area} </p>`
 }
 
-function perimetroCuadrado( lado ) {
-    return lado*4  
+function perimetroCuadrado() {
+    let lado = parseInt( document.querySelector("#txtLadoCuadrado").value)
+    let perimetro = lado*4
+    lblResultado.innerHTML = `<p> El perímetro del cuadrado es: ${perimetro}</p>`
 } 
 
 // Triangulo
