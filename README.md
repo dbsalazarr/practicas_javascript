@@ -7,3 +7,5 @@ Repo para subir todos los proyectos realizados en el curso práctico de JS
 - Primer paso: definir e implementar las fórmulas
 - Segundo: programar las formulas
 - Tercero: Probar los resultados
+
+## Taller Nroº 2: Moda y Media de un grupo de datos
