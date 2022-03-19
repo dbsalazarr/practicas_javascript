@@ -130,10 +130,12 @@ eventosButtons("btnAreaTrapecio", areaTrapecio)
 /* 
     ELIPSE
  */
-let ejeMenor, ejeMayor
-ejeMenor = 12
-ejeMayor = 23
-function areaElipse(ejeMenro, ejeMayor){
-    return PI*ejeMayor*ejeMenor
+function areaElipse(){
+    let ejeMenor, ejeMayor, areaElipse
+    ejeMenor = leerEntrada("txtEjeMenor")
+    ejeMayor = leerEntrada("txtEjeMayor")
+    areaElipse = PI*ejeMayor*ejeMenor
+    resultado = `<p> El área de la elipse es: ${areaElipse}</p>`
+    mostrarResultado( resultado )
 }
 
