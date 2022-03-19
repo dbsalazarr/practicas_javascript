@@ -139,3 +139,4 @@ function areaElipse(){
     mostrarResultado( resultado )
 }
 
+eventosButtons( "btnAreaElipse", areaElipse)
