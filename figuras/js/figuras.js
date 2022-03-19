@@ -104,7 +104,9 @@ function areaCirculo(){
 eventosButtons("btnPerCirculo", perimetroCirculo)
 eventosButtons("btnAreaCirculo", areaCirculo)
 
-// Trapecio
+/* 
+    TRAPECIO
+*/
 let baseMayor, baseMenor, altura
 baseMayor = 10
 baseMenor = 5
