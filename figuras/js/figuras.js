@@ -41,7 +41,7 @@ function perimetroCuadrado() {
     lblResultado.innerHTML = `<p> El perímetro del cuadrado es: ${perimetro}</p>`
 } 
 
-// Triangulo
+// TRIANGULO
 
 function perimetroTriangulo( lado1, lado2, lado3){
     return lado1 + lado2 + lado3 
