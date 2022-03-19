@@ -90,12 +90,15 @@ function perimetroCirculo(){
     let radio, perimetro, resultado
     radio = leerEntrada("txtRadio")
     perimetro = 2*radio*PI
-    resultado = `<p> El perímetro del circulo es: ${superficieTriangulo}</p>`
+    resultado = `<p> El perímetro del circulo es: ${Math.round(perimetro)}</p>`
     mostrarResultado( resultado)
 }
 function areaCirculo(){
-    let radio, perimetro, resultado
-    return PI*radio**2
+    let radio, area, resultado
+    radio = leerEntrada("txtRadio")
+    area = PI*radio**2
+    resultado = `<p> El perímetro del circulo es: ${ Math.round(area, 2)}</p>`
+    mostrarResultado( resultado)
 }
 
 eventosButtons("btnPerCirculo", perimetroCirculo)
