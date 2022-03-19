@@ -78,7 +78,9 @@ function areaTriangulo(){
 eventosButtons("btnPerTriangulo", perimetroTriangulo)
 eventosButtons("btnAreaTriangulo", areaTriangulo)
 
-// Circulo
+/* 
+    CIRCULO
+*/
 const PI = Math.PI
 function areaCirculo(radio){
     return PI*radio**2
