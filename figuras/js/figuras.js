@@ -129,8 +129,7 @@ eventosButtons("btnAreaTrapecio", areaTrapecio)
 
 /* 
     ELIPSE
-*/
-
+ */
 let ejeMenor, ejeMayor
 ejeMenor = 12
 ejeMayor = 23
