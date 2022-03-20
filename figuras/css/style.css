@@ -63,7 +63,7 @@ section{
     flex: 0 0 100%;   
     margin-bottom: 2rem;
 }
-@media only screen and (min-width: 680px){
+@media only screen and (min-width: 540px){
     .flex-container{
         display: flex;
         flex-wrap: wrap;
