@@ -4,75 +4,78 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css" >
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap" rel="stylesheet"> 
     <title>Calculo del perimetro y el área de figuras geometricas</title>
 </head>
 <body>
-    <header>
-        <h1>Figuras geométricas</h1>
-        <p>Primer taller del curso práctico de JS</p>
-    </header>
-    
-    <section>
-        <h2> Calcula el área y perímetro de un cuadrado</h2>
-        <form action="">
-            <label for="">¿Cual es la longitud del lado del cuadrado? Ingresa su tamaño:</label>
-            <input id="txtLadoCuadrado" type="number">
-            <button type="button" id="btnPerimetroCuadrado" > Calcular el Perimetro </button>
-            <button type="button" id="btnAreaCuadrado" > Calcular el Área </button>
-        </form>
-    </section>
-
-    <section>
-        <h2>Calcula el área y perímetro de un triangulo</h2>
-        <form action="">
-            <label for="txtLado1">Lado 1</label>
-            <input id="txtLado1" type="number">
-            <label for="txtLado2">Lado 2</label>
-            <input id="txtLado2" type="number">
-            <label for="txtLado3">Lado 3</label>
-            <input id="txtLado3" type="number">
-
-            <button type="button" id="btnPerTriangulo"> Calcular Perímetro </button>
-            <button type="button" id="btnAreaTriangulo"> Calcular Área </button>
-        </form>
-    </section>
-    <section>
-        <h2>Calcula el área y perímetro de un circulo</h2>
-        <form action="">
-            <label for="txtRadio">Ingresa la longitud del radio del circulo: </label>
-            <input type="number" id="txtRadio">
-            <button type="button" id="btnPerCirculo">Calcular Perímetro</button>
-            <button type="button" id="btnAreaCirculo">Calcular Área</button>
-        </form>
-    </section>
-    <section>
-        <h2>Calcular el área de un trapecio</h2>
-        <form action="">
-            <label for="txtBaseMenor">Ingrese la Base Menor del Trapecio</label>
-            <input type="number" id="txtBaseMenor">
-            
-            <label for="txtBaseMayor">Ingrese la Base Mayor del Trapecio</label>
-            <input type="number" id="txtBaseMayor">
-
-            <label for="txtAltura">Ingrese la altura del Trapecio</label>
-            <input type="number" id="txtAltura">
-
-            <button type="button" id="btnAreaTrapecio">Calcular Area del trapecio</button> 
-        </form>
-    </section>
-    <section>
-        <h2>Calcular el área de un Elipse</h2>
-        <form action="">
-            <label for="txtEjeMenor">Ingrese la Eje Menor de la Elipse</label>
-            <input type="number" id="txtEjeMenor">
-            
-            <label for="txtEjeMayor">Ingrese la Eje Mayor de la Elipse</label>
-            <input type="number" id="txtEjeMayor">
-
-            <button type="button" id="btnAreaElipse">Calcular Area de la Elipse</button> 
-        </form>
-    </section>
-    <label for="" id="lblResultado"></label>
+    <div class="main-content">
+        <header class="text-center">
+            <h1>Figuras geométricas</h1>
+            <p>Primer taller del curso práctico de JS</p>
+        </header>
+        
+        <article class="flex-container">
+            <section>
+                <h2> Calcula el área y perímetro de un cuadrado</h2>
+                <form action="">
+                    <label for="">¿Cual es la longitud del lado del cuadrado? Ingresa su tamaño:</label>
+                    <input id="txtLadoCuadrado" type="number">
+                    <button type="button" id="btnPerimetroCuadrado" > Calcular el Perimetro </button>
+                    <button type="button" id="btnAreaCuadrado" > Calcular el Área </button>
+                </form>
+            </section>
+            <section>
+                <h2>Calcula el área y perímetro de un triangulo</h2>
+                <form action="">
+                    <label for="txtLado1">Lado 1</label>
+                    <input id="txtLado1" type="number">
+                    <label for="txtLado2">Lado 2</label>
+                    <input id="txtLado2" type="number">
+                    <label for="txtLado3">Lado 3</label>
+                    <input id="txtLado3" type="number">
+                    <button type="button" id="btnPerTriangulo"> Calcular Perímetro </button>
+                    <button type="button" id="btnAreaTriangulo"> Calcular Área </button>
+                </form>
+            </section>
+            <section>
+                <h2>Calcula el área y perímetro de un circulo</h2>
+                <form action="">
+                    <label for="txtRadio">Ingresa la longitud del radio del circulo: </label>
+                    <input type="number" id="txtRadio">
+                    <button type="button" id="btnPerCirculo">Calcular Perímetro</button>
+                    <button type="button" id="btnAreaCirculo">Calcular Área</button>
+                </form>
+            </section>
+            <section>
+                <h2>Calcular el área de un trapecio</h2>
+                <form action="">
+                    <label for="txtBaseMenor">Ingrese la Base Menor del Trapecio</label>
+                    <input type="number" id="txtBaseMenor">
+        
+                    <label for="txtBaseMayor">Ingrese la Base Mayor del Trapecio</label>
+                    <input type="number" id="txtBaseMayor">
+                    <label for="txtAltura">Ingrese la altura del Trapecio</label>
+                    <input type="number" id="txtAltura">
+                    <button type="button" id="btnAreaTrapecio">Calcular Area del trapecio</button>
+                </form>
+            </section>
+            <section>
+                <h2>Calcular el área de un Elipse</h2>
+                <form action="">
+                    <label for="txtEjeMenor">Ingrese la Eje Menor de la Elipse</label>
+                    <input type="number" id="txtEjeMenor">
+        
+                    <label for="txtEjeMayor">Ingrese la Eje Mayor de la Elipse</label>
+                    <input type="number" id="txtEjeMayor">
+                    <button type="button" id="btnAreaElipse">Calcular Area de la Elipse</button>
+                </form>
+            </section>
+        </article>
+        <h1>
+            <label for="" id="lblResultado"></label>
+        </h1>
+    </div>
     <script src="./js/figuras.js"></script>
 </body>
 </html>
