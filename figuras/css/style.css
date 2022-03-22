@@ -1,0 +1,130 @@
+:root{
+
+    --blanco: #fff;
+    --negro: #000;
+    --colorCuadrado: #FF3078;
+    --colorTriangulo: #3EB4F1;
+    --colorCirculo: #FFDA27;
+    --colorTrapecio: #74B65F;
+    --colorElipse: #9A62DD;
+    --colorButtons: #FF554D;
+
+    /* 
+        FUENTES
+    */
+    --principalFont: "Ubuntu", sans-serif;
+    --sm: 1.6rem;
+    --md: 1.8rem;
+    --lg: 2rem;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+*,
+*::before,
+*::after{
+    box-sizing: inherit;
+}
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+body{
+    font: normal normal 1.6rem var(--principalFont)
+}
+/* 
+    UTILITARIOS
+*/
+.text-center{
+    text-align: center;
+}
+.resultado{
+    display: block;
+    font-size: var(--lg);
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+/* 
+    FIGURAS
+*/
+header{
+    margin: 40px 0;
+}
+.main-content{
+    max-width: 1920px;
+    width: 90%;
+    margin: 0 auto;
+}
+section{
+    border-radius: 8px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, .45);
+    padding: 2rem;
+    flex: 0 0 100%;   
+    margin-bottom: 2rem;
+}
+@media only screen and (min-width: 540px){
+    .flex-container{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    section{
+        flex: 0 1 calc( 50% - 2rem);
+    }
+}
+
+@media only screen and (min-width: 960px){
+    section{
+        flex: 0 1 calc( 33.3333% - 2rem);
+    }
+}
+@media only screen and (min-width: 1200px){
+    section{
+        flex: 0 1 calc(25% - 2rem);
+    }
+}
+@media only screen and (min-width: 1400px){
+    section{
+        flex: 0 1 calc(20% - 2rem);
+    }
+}
+header h1{
+    margin-bottom: 1rem;
+}
+section h2{
+    margin-bottom: 20px;    
+    text-align: center;
+}
+section label{
+    display: block;
+}
+section input{
+    width: 100%;
+    padding: 1.5rem 2rem;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, .75);
+    margin-bottom: 2rem;
+}
+section .content-button{
+    display: flex; 
+    justify-content: space-between;
+}
+section button{
+    display: inline-block;
+    max-width: auto;
+    flex: 0 0 calc( 50% - 2rem);
+    padding: 1rem 0.5rem;
+    border: none;
+    background: var(--colorButtons);
+    font-size: var(--sm);
+    color: var(--blanco);
+    font-weight: 400;
+    border-radius: 12px;
+    transition: background .25s ease-in-out;
+}
+section:nth-child(1) button:hover{ background: var(--colorCuadrado); }
+section:nth-child(2) button:hover{ background: var(--colorTriangulo); }
+section:nth-child(3) button:hover{ background: var(--colorCirculo); }
+section:nth-child(4) button:hover{ background: var(--colorTrapecio); }
+section:nth-child(5) button:hover{ background: var(--colorElipse); }
