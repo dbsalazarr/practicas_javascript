@@ -10,3 +10,5 @@ Repo para subir todos los proyectos realizados en el curso práctico de JS
 
 > Finalmente se estan agregando estilos para la web antes diseñada
 ## Taller Nroº 2: Moda y Media de un grupo de datos
+
+> El 22/03/2022 se logro terminar con el primer reto, ahora iniciare con la segunda parte del curso práctico de JS
