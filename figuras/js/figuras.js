@@ -75,8 +75,33 @@ function areaTriangulo(){
     lado3 = leerEntrada("txtLado3")
     s = (lado1 + lado2 + lado3)/2
     superficieTriangulo = Math.sqrt( s*(s - lado1)*(s - lado2)*(s-lado3) ) 
-    resultado = `<p> El área del triangulo es: ${superficieTriangulo}</p>`
+    if ( esTrianguloIsosceles(lado1, lado2, lado3) ){
+        let base, ladoEquivalente, alturaTrianguloIsosceles
+        resultado += "Es un Triangulo Isosceles <br />"
+        if( lado1 == lado2 ){
+            ladoEquivalente = lado1
+            base = lado3
+        }else if( lado1 == lado3){
+            ladoEquivalente = lado3
+            base = lado2
+        }else{
+            ladoEquivalente = lado2
+            base = lado1
+        }
+        alturaTrianguloIsosceles = Math.sqrt( ladoEquivalente**2 - (base/2)**2 )
+        resultado += "La altura del triangulo es: " + alturaTrianguloIsosceles
+    }
+    resultado += `<p> El área del triangulo es: ${superficieTriangulo}</p>`
     mostrarResultado( resultado )
+    resultado = ""
+}
+
+function esTrianguloIsosceles(lado1, lado2, lado3){
+    if( lado1 == lado2 && lado1 != lado3 && lado2 != lado3 || lado1 == lado3 && lado1 != lado2 && lado3 != lado2 || lado2 == lado3 && lado2 != lado1 && lado3 != lado1){
+        return true
+    }else{
+        return false
+    }
 }
 
 eventosButtons("btnPerTriangulo", perimetroTriangulo)
