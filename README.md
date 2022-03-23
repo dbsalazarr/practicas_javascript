@@ -12,3 +12,8 @@ Repo para subir todos los proyectos realizados en el curso práctico de JS
 ## Taller Nroº 2: Moda y Media de un grupo de datos
 
 > El 22/03/2022 se logro terminar con el primer reto, ahora iniciare con la segunda parte del curso práctico de JS
+
+En esta segunda parte vamos a crear una manera interactiva de:
+
+- Calcular Pprcentajes
+- Aplicando Porcentajes el calculo de los descuentos
