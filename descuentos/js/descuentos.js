@@ -32,23 +32,47 @@ document.getElementById("btnDescuento").addEventListener("click", () => {
 */
 productos = [
     {
-        nombre: "Bici", 
+        nombre: "Bicicleta", 
         precio: 760,
-        cupon: "BC001"
+        cupon: "", 
+        moneda: "soles",
+        descuento: 15
     },
     {
-        nombre: "Bici", 
-        precio: 760,
-        cupon: "BC001"
+        nombre: "Teclado PRO X1 ONE", 
+        precio: 60,
+        cupon: "TCL002",
+        moneda: "dolares",
+        descuento: 25
     },
     {
-        nombre: "Bici", 
-        precio: 760,
-        cupon: "BC001"
+        nombre: "PC Gamer Set Gamer", 
+        precio: 3500,
+        cupon: "PCG001",
+        moneda: "dolares",
+        descuento: 50
+
     },
     {
-        nombre: "Bici", 
-        precio: 760,
-        cupon: "BC001"
+        nombre: "USB 1Tb ASUS", 
+        precio: 240,
+        cupon: "USB001",
+        moneda: "soles",
+        descuento: 0
     }
 ]
+
+let selectProducts = document.createElement("select")
+selectProducts.id = "optProducto"
+
+productos.forEach( (producto) => {
+    let valueOption = producto.nombre.toLowerCase().replace(" ", "-")
+    let selectOption = document.createElement("option")
+    selectOption.value = valueOption
+    selectOption.text = producto.nombre
+    selectProducts.appendChild( selectOption )
+})
+
+
+const frmDescuento = document.getElementById("frmDescuentos")
+frmDescuento.insertBefore(selectProducts, frmDescuento.children[0])
