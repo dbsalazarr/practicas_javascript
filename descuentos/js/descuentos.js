@@ -12,3 +12,16 @@ console.log({
     porcentajePagar,
     totalPagar
 })
+
+function calcularTotalPagar( precioOriginal, descuento){
+    return precioOriginal*(100 - descuento)/100
+}
+
+document.getElementById("btnDescuento").addEventListener("click", () => {
+    let precioProducto, descuento, totalPagar, lblResultado
+    precioProducto = parseFloat( document.getElementById("txtPrecioProducto").value )
+    descuento = parseFloat( document.getElementById("txtDescuento").value )
+    totalPagar = calcularTotalPagar( precioProducto, descuento )
+    lblResultado = document.getElementById("lblResultado")
+    lblResultado.innerHTML = `<p> El precio con descuento es: ${totalPagar}</p>`
+})

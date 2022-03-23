@@ -17,3 +17,4 @@ En esta segunda parte vamos a crear una manera interactiva de:
 
 - Calcular Pprcentajes
 - Aplicando Porcentajes el calculo de los descuentos
+- Creación de formularios para realizar el calculo de los descuentos
