@@ -25,3 +25,5 @@ document.getElementById("btnDescuento").addEventListener("click", () => {
     lblResultado = document.getElementById("lblResultado")
     lblResultado.innerHTML = `<p> El precio con descuento es: ${totalPagar}</p>`
 })
+
+// RETO
