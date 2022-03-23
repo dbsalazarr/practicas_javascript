@@ -27,3 +27,28 @@ document.getElementById("btnDescuento").addEventListener("click", () => {
 })
 
 // RETO
+/*
+    APLICAR UN DESCUENTO APLICANDO CUPONES PARA LOS PRODUCTOS
+*/
+productos = [
+    {
+        nombre: "Bici", 
+        precio: 760,
+        cupon: "BC001"
+    },
+    {
+        nombre: "Bici", 
+        precio: 760,
+        cupon: "BC001"
+    },
+    {
+        nombre: "Bici", 
+        precio: 760,
+        cupon: "BC001"
+    },
+    {
+        nombre: "Bici", 
+        precio: 760,
+        cupon: "BC001"
+    }
+]
