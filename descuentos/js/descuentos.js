@@ -52,9 +52,13 @@ productos = [
         descuento: 15
     }
 ]
-
-let selectProducts = document.createElement("select")
+/*
+    VARIABLES
+*/
+let resultado = ""
+const selectProducts = document.createElement("select")
 selectProducts.id = "optProducto"
+
 
 productos.forEach( (producto) => {
     let valueOption = producto.nombre
@@ -73,22 +77,49 @@ frmDescuento.insertBefore(selectProducts, frmDescuento.children[0])
     CREANDO Y AGREGANDO EL EVENTO CHANGE A SELECT PARA DETERMINAR LOS PRECIOS
 */
 selectProducts.addEventListener('change', (event) => {
+    let txtCupon = document.getElementById("txtCupon")
     // Filtrando elementos
     let productFilter = productos.filter( (item) => {
         return item.nombre == event.target.value
     })
-    console.log(productFilter)
 
     // Mostrando los valores en los campos
     const txtPrecio = document.getElementById("txtPrecioProducto")
     
+    // Mostrando el precio y descuento para el producto seleccionado
     txtPrecio.value = productFilter[0].precio
-    txtDescuento.value = productFilter[0].descuento
+    txtCupon.value = ""
 
-    // Mostrando el precio con su respectivo descuento
 })
 
 document.getElementById("btnVerificarDescuento").addEventListener("click", () => {
     const txtCupon = document.getElementById("txtCupon").value
+    let lblResultado = document.getElementById("lblResultado")
+    let optionSelected =  selectProducts.options[selectProducts.selectedIndex].text
+    let moneda = ""
+    let descuento = 0
+    let item = productos.filter( (product) => {
+        return product.nombre == optionSelected
+    })
 
+    if (item[0].moneda == "soles")
+        moneda = "S/."
+    else if (item[0].moneda == "dolares")
+        moneda = "$"
+    else 
+        moneda = ""
+    if( item[0].cupon != "" && item[0].cupon == txtCupon){
+        descuento = item[0].descuento
+        resultado += `<p> Cupón valído, el descuento a aplicar es de: ${moneda} ${descuento}%</p>`
+    }else{
+        if( item[0].cupon != txtCupon && item[0].cupon != ""){
+            resultado += `<p> Cupón no válido para este producto, descuento: ${descuento}%</p>`
+        }
+        if( item[0].cupon == ""){
+            resultado += "<p>Este articulo no cuenta con un cupón de descuento </p>"
+        }
+    }
+    resultado += `<p>El monto a pagar será de: ${moneda} ${calcularTotalPagar(item[0].precio, descuento)} </p>`
+    lblResultado.innerHTML = resultado
+    resultado = ""
 })
