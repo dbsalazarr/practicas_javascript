@@ -14,17 +14,22 @@
             <p><span> Tienda Online</span> para el segundo taller práctico de JS</p>
         </header>
         <section>
-            <h2>Calcular el precio final a pagar por un producto</h2>
+            <h3>Calcular el precio final a pagar por un producto</h3>
             <form action="" id="frmDescuentos">
                 <label for="txtPrecioProducto"> Precio del producto </label>
                 <input type="number" id="txtPrecioProducto">
         
                 <label for="txtCupon"> Ingresar código cupón</label>
-                <input type="text" id="txtCupon">
-                <button type="button" id="btnVerificarDescuento">Verificar Descuento</button>
+                <div class="group-field">
+                    <input type="text" id="txtCupon">
+                    <button type="button" id="btnVerificarDescuento">Verificar Descuento</button>
+                </div>
+
                 <label for="txtDescuento"> Descuento </label>
-                <input type="number" id="txtDescuento">
-                <button type="button" id="btnDescuento">Calcular Precio con descuento</button>
+                <div class="group-field">
+                    <input type="number" id="txtDescuento">
+                    <button type="button" id="btnDescuento">Calcular Precio con descuento</button>
+                </div>
             </form>
         </section>
         
