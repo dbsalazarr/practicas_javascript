@@ -1,3 +1,7 @@
+:root{
+    --black: #000;
+    --white: #fff;
+}
 *{
     padding: 0;
     margin: 0;
@@ -14,3 +18,14 @@ html{
 body{
     font: normal normal 1.6rem "Open Sans", Arial, Helvetica;
 }
+
+/*
+    UTILITARIOS
+*/
+a{
+    text-decoration: none;
+    color: var(--black);
+}
+/* 
+    CONTENEDOR
+*/
