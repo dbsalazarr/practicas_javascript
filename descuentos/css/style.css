@@ -23,6 +23,10 @@ html{
 }
 body{
     font: normal normal 1.6rem "Open Sans", Arial, Helvetica;
+    background: linear-gradient(45deg, #ad5389, #3c1053);
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
 }
 
 /*
@@ -36,10 +40,10 @@ a{
     CONTENEDOR
 */
 .content{
-    max-width: 500px;
+    max-width: 350px;
     width: 90%;
     margin: 0 auto;
-    padding: 20px;
+    color: var(--white);
 }
 .content header{
     text-align: center;
@@ -54,12 +58,45 @@ a{
 }
 .content section form select{
     width: 100%;
-    padding: 10px;
-
+    padding: 10px 20px;
     appearance: none;
     background: var(--red-salsa);
     color: var(--white);
     border: 0;
+}
+.content section form #productList{
+    position: relative;
+}
+.content section form .arrow-select{
+    position: absolute;
+    height: 100%;
+    width: 50px;
+    background: var(--dark-cornflower-blue);
+    top: 0;
+    right: 0;
+    pointer-events: none;
+}
+.content section form .arrow-select::before,
+.content section form .arrow-select::after{
+    --size: 9.6px;
+    content: '';
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.content section form .arrow-select::before{
+    border-left: var(--size) solid transparent;
+    border-right: var(--size) solid transparent;
+    border-bottom: var(--size) solid var(--white);
+    top: 30%
+}
+.content section form .arrow-select::after{
+    border-left: var(--size) solid transparent;
+    border-right: var(--size) solid transparent;
+    border-top: var(--size) solid var(--white);
+    top: 65%;
 }
 .content section form label{
     display: block;
