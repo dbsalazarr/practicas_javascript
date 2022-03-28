@@ -16,6 +16,9 @@
         <section>
             <h3>Calcular el precio final a pagar por un producto</h3>
             <form action="" id="frmDescuentos">
+                <div id="productList">
+                    <span class="arrow-select"></span>
+                </div>
                 <label for="txtPrecioProducto"> Precio del producto </label>
                 <input type="number" id="txtPrecioProducto">
         
@@ -24,16 +27,10 @@
                     <input type="text" id="txtCupon">
                     <button type="button" id="btnVerificarDescuento">Verificar Descuento</button>
                 </div>
-
-                <label for="txtDescuento"> Descuento </label>
-                <div class="group-field">
-                    <input type="number" id="txtDescuento">
-                    <button type="button" id="btnDescuento">Calcular Precio con descuento</button>
-                </div>
             </form>
         </section>
         
-        <label for="" id="lblResultado"></label>
+        <label id="lblResultado"></label>
     </article>
     <script src="./js/descuentos.js"></script>
 </body>

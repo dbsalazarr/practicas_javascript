@@ -46,10 +46,17 @@ productos = [
     },
     {
         nombre: "USB 1Tb ASUS", 
-        precio: 240,
+        precio: 240,    
         cupon: "USB001",
         moneda: "soles",
         descuento: 15
+    },
+    {
+        nombre: "Tablet SAMSUNG", 
+        precio: 320,    
+        cupon: "TB90",
+        moneda: "dolares",
+        descuento: 20
     }
 ]
 /*
@@ -69,9 +76,9 @@ productos.forEach( (producto) => {
 })
 
 
-const frmDescuento = document.getElementById("frmDescuentos")
+const selectListProducts = document.getElementById("productList")
 // Agregar un elemento al inicio
-frmDescuento.insertBefore(selectProducts, frmDescuento.children[0])
+selectListProducts.appendChild(selectProducts)
 
 /* 
     CREANDO Y AGREGANDO EL EVENTO CHANGE A SELECT PARA DETERMINAR LOS PRECIOS

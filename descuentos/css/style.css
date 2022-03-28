@@ -55,6 +55,11 @@ a{
 .content section form select{
     width: 100%;
     padding: 10px;
+
+    appearance: none;
+    background: var(--red-salsa);
+    color: var(--white);
+    border: 0;
 }
 .content section form label{
     display: block;
