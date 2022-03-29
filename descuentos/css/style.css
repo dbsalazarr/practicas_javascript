@@ -4,9 +4,9 @@
     */
     --black: #000;
     --white: #fff;
-    --red-salsa: #F15152;
-    --dark-cornflower-blue: #1E3888;
-    --corn: #F5E663;
+    --red-salsa: #AD5389;
+    --dark-cornflower-blue: #5386E4;
+    --corn: #FFFF82;
 }
 *{
     padding: 0;
@@ -63,6 +63,10 @@ a{
     background: var(--red-salsa);
     color: var(--white);
     border: 0;
+    overflow: hidden;
+    border-radius: 20px;
+    font-size: 14px;
+    letter-spacing: .5px;
 }
 .content section form #productList{
     position: relative;
@@ -75,6 +79,7 @@ a{
     top: 0;
     right: 0;
     pointer-events: none;
+    border-radius: 0px 20px 20px 0;
 }
 .content section form .arrow-select::before,
 .content section form .arrow-select::after{
@@ -100,24 +105,33 @@ a{
 }
 .content section form label{
     display: block;
+    margin: 20px 0;
 }
 .content section form input{
-    padding: 10px 16px;
-    margin-bottom: 16px;
-    border: none;
-    border-bottom: 1px solid var(--black);
+    padding: 10px 12px;
+    background: transparent;
+    border: 1px solid var(--white);
+    border-radius: 20px;
+    color: var(--white);
+    font-size: 14px;
+    max-width: 50%;
+}
+.content section form input[type="number"]{
+    appearance: textfield;
 }
 .content section form button{
     background: var(--dark-cornflower-blue);
     color: var(--white);
     border: none;
-    padding: 10px 16px;
-    border-radius: 12px;
+    border-radius: 16px;
     font-size: 14px;
     font-weight: 300;
     letter-spacing: .2px;
+    padding: 10px 16px;
 }
 .content section form .group-field{
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
+
