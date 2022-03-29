@@ -130,3 +130,17 @@ document.getElementById("btnVerificarDescuento").addEventListener("click", () =>
     lblResultado.innerHTML = resultado
     resultado = ""
 })
+
+/* 
+    Imprimiendo la lista de cupones
+*/
+let tableCupons = "<table>"
+let headerTable = ` <tr>  <th> Product </th> <th> Cupon </th> </tr>`
+tableCupons += headerTable
+productos.forEach( (item) => {
+    tableCupons += `<tr> <td> ${item.nombre} </td> <td> ${item.cupon} </td> </tr>`
+})
+tableCupons += "</table>"
+
+// Agregando tabla to HTML
+document.getElementById("cuponList").innerHTML = tableCupons

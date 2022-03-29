@@ -36,14 +36,33 @@ a{
     text-decoration: none;
     color: var(--black);
 }
+table, th, td{
+    border: 1px solid var(--white);
+}
+th, td{
+    padding: 10px 15px;
+}
+table{
+    border-collapse: collapse;
+}
 /* 
     CONTENEDOR
 */
 .content{
-    max-width: 350px;
+    max-width: 450px;
     width: 90%;
     margin: 0 auto;
     color: var(--white);
+}
+@media only screen and (min-width: 960px){
+    .content{
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+    }
+}
+.content .descuentos{
+    margin-bottom: 40px;
 }
 .content header{
     text-align: center;
