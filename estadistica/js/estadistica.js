@@ -34,9 +34,12 @@ function calcularMediaAritmetica( listNumbers ){
 console.log( calcularMediaAritmetica( salarios ) )
 
 // Mediana de una lista de numeros
-const inversiones = [400, 500, 200, 300, 600, 450]
+const inversiones = [400, 500, 200, 300, 600, 450, 10, 80, 9]
 
 function calcularMediana( list ){
+
+    // Ordenando la lista
+    list.sort( (a, b) => a - b)
     let mediumTerm 
     if( isEven( list.length )){
         // es par
@@ -46,7 +49,7 @@ function calcularMediana( list ){
         return (list[mediumTerm] + list[nextElement]) / 2
     }else {
         // es impar
-        mediumTerm = (list.length/2 + 0.5) -1
+        mediumTerm = (list.length/2 + 0.5) - 1
         return list[mediumTerm]
     }
 }
