@@ -65,3 +65,99 @@ function isEven( number ){
 */
 
 console.log("La mediana es: "+ calcularMediana(inversiones) )
+
+
+
+/* 
+    CALCULANDO LA MODA
+*/
+const lista1 = [1, 2, 3, 1, 3, 3, 4, 3, 2, 2, 1]
+
+function calculateMode( list ){
+    const modeObject = {}
+
+    // Agregando elementos al objeto, contando los elementos repetidos en la lista
+    lista1.map( (element) => {
+        // Si existe el modeObject
+        if (modeObject[element] ) {
+            modeObject[element] += 1
+        }else{    
+            modeObject[element] = 1
+        }
+    })
+    // CONVIRTIENDO UN OBJETO A UN ARRAY
+    const entries = Object.entries( modeObject)
+
+    // ORDENANDO EL ARREGLO BIDIMENSIONAL DE MENOR A MAYOR
+    entries.sort( (value, nextValue) => {
+        return value[1] - nextValue[1]
+    } )
+
+    return entries[ entries.length - 1][0]
+}
+console.log("The mode in the list of numbers is: " + calculateMode(lista1) )
+
+
+/* 
+SOLUCIÓN ALTERNA - ENCONTRADA EN LOS COMENTARIOS
+const NUMBERS = [2, 2, 1, 1, 3];
+
+function mode(arr){
+    return arr.sort((a,b) =>
+          arr.filter(v => v===a).length
+        - arr.filter(v => v===b).length
+    ).pop()
+}
+
+console.log( mode(NUMBERS) )
+
+ */
+
+ /*
+    Nuevo Promedio
+    GEOMETRIC AVERAGE
+ */
+function geometricAverage( list ){
+    let product
+    product = list.reduce( (value, nextValue) => value*nextValue)
+    return Math.pow( product, 1/list.length)
+}
+// console.log( geometricAverage( [2, 8] ) ) // result is 4
+
+
+// OBTENIENDO EL PROMEDIO PONDERADO DEL SIGUIENTE ARRAY DE OBJETOS
+const notes = [
+    {
+        course: "Educación Emocional",
+        note: 10,
+        credit: 2
+    },
+    {
+        course: "Programación",
+        note: 8,
+        credit: 5
+    },
+    {
+        course: "Finanzas personales",
+        note: 7,
+        credit: 5
+    }
+];
+
+// producto the grade with the credit
+
+let productGrades = notes.map( (item) => {
+    return item.note * item.credit
+}) 
+
+let sumGrades = productGrades.reduce( (value, nextValue) => value + nextValue)
+let sumCredits = 0
+notes.forEach( (item) => {
+    console.log(item.credit)
+    sumCredits += item.credit
+})
+
+console.log(sumCredits)
+weightedAverage = sumGrades/sumCredits
+
+console.log( "The weight average is: " + weightedAverage)
