@@ -227,7 +227,7 @@ function getRandomIntInclusive(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
 }
 
-let people = generatePeople( 101 )
+let people = generatePeople( 200 )
 
 let listSalarios = people.map( (person) => person.salary)
 
@@ -256,3 +256,21 @@ function isEven( number ){
 }
 console.log( listSalarios )
 console.log(" The median is: " + calcularMediana( listSalarios ) )
+
+
+// CALCULATE THE MEDIAN OF THE TOP TEN 10
+
+function medianTopTenSalarys( list ){
+
+    // sort list
+    list.sort( (value, nextValue) => value - nextValue)
+    let total, start, rest, top10, medianTopTen
+    total = list.length
+    start = Math.floor( total * .9)
+    rest = total - start
+    top10 = list.splice(start, rest) 
+    medianTopTen = calcularMediana( top10 )
+    return medianTopTen
+}
+
+console.log( medianTopTenSalarys( listSalarios) )
