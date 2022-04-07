@@ -75,5 +75,5 @@ console.log( medianTopTenSalarys( listSalarios) )
 
 
 /*
-    SHOW PEOPLE IN THE PROGRAM
+    SHOW PEOPLE GENERATED
 */

@@ -1,0 +1,108 @@
+:root{
+    /* 
+        COLORS
+    */
+    --white: #fff;
+    --black: #000;
+    --primary-color: #1D90F5;
+    --secondary-color: #555B69;
+    --background-color-form: #272A37;
+    --background-focus-input: #3D404B;
+    --background-input: #323644;
+    --background-body: #525561;
+    --color-icon: #C4C4C4;
+    --color-subtitle: #9AA5B5;
+
+    /* 
+        FONTS
+    */
+    --primary-font: 'Poppins', sans-serif;
+    --secondary-font: 'Raleway', sans-serif;
+
+    /* 
+        FONT SIZES
+    */
+    --sm: 1.6rem;
+    --md: 1.8rem;
+    --lg: 2rem;
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+*,
+*::before,
+*:after{
+    box-sizing: inherit;
+}
+html{
+    font-size: 62.5%; /* Now 10px is equal to 1rem */
+    box-sizing: border-box;
+}
+body{
+    font: normal normal 1.6rem var(--primary-font);
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background: var(--background-body);
+    
+}
+h2{
+    font-size: 4rem
+}
+/* 
+    UTILITARIES
+*/
+.content{
+    max-width: 1920px;
+    width: 80%;
+    margin: 0 auto;
+    height: 50rem;
+    background: var(--background-color-form);
+    color: var(--white);
+    border-radius: 4rem;
+    box-shadow: 0px 3px 20px rgba(0, 0, 0, .25);
+    padding: 4rem 2rem;
+}
+.button{
+    border: none;
+    max-width: 15rem;
+    width: 50%;
+    color: var(--white);
+    padding: 1.6rem;
+    border-radius: 4rem;
+    font-size: var(--sm);
+}
+.button.primary{
+    background: var(--primary-color);
+}
+.button.secondary{
+    background: var(--secondary-color);
+}
+/* 
+    CARD APP 
+*/
+.content input[type="number"]{
+    appearance: textfield;
+}
+.content input{
+    border: none;
+    background: var(--background-input);
+    color: var(--white);
+    border-radius: 2rem;
+    padding: 2.4rem 1.6rem 1.6rem 2rem;
+    font-size: var(--md);
+}
+.content .group-field{
+    position: relative;
+}
+.content .group-field label{
+    position: absolute;
+    color: var(--color-subtitle);
+    font-size: 1.2rem;
+    top: .3rem;
+    left: 2rem;
+}
+.content button{
+
+}
