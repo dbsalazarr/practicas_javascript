@@ -1,6 +1,6 @@
 
 /*
-	"GENERAR",NAME AND SALARIO
+	"GENERAR" NAME AND SALARIO FOR EACH PERSON
 */
 function person( name, salary ){
 	this.name = name
