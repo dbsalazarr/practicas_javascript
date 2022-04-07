@@ -72,3 +72,8 @@ function medianTopTenSalarys( list ){
 }
 
 console.log( medianTopTenSalarys( listSalarios) )
+
+
+/*
+    SHOW PEOPLE IN THE PROGRAM
+*/
