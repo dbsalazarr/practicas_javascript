@@ -50,6 +50,13 @@ body{
 h2{
     font-size: 4rem
 }
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: var(--white);;
+    opacity: 1; /* Firefox */
+  }
+::-ms-input-placeholder { /* Microsoft Edge */
+color: var(--white);
+}
 /* 
     UTILITARIES
 */
@@ -57,7 +64,7 @@ h2{
     max-width: 1920px;
     width: 80%;
     margin: 0 auto;
-    height: 50rem;
+    min-height: 30rem;
     background: var(--background-color-form);
     color: var(--white);
     border-radius: 4rem;
@@ -66,12 +73,12 @@ h2{
 }
 .button{
     border: none;
-    max-width: 15rem;
-    width: 50%;
+    width: 100%;
     color: var(--white);
     padding: 1.6rem;
     border-radius: 4rem;
     font-size: var(--sm);
+    margin-bottom: 2rem;
 }
 .button.primary{
     background: var(--primary-color);
@@ -82,16 +89,21 @@ h2{
 /* 
     CARD APP 
 */
+.content h2{
+    margin-bottom: 2.5rem;
+}
 .content input[type="number"]{
     appearance: textfield;
 }
 .content input{
+    width: 100%;
     border: none;
     background: var(--background-input);
     color: var(--white);
     border-radius: 2rem;
     padding: 2.4rem 1.6rem 1.6rem 2rem;
     font-size: var(--md);
+    margin-bottom: 2rem;
 }
 .content .group-field{
     position: relative;
@@ -103,6 +115,30 @@ h2{
     top: .3rem;
     left: 2rem;
 }
-.content button{
-
+.content .group-field .icon-input{
+    position: absolute;
+    right: 2rem;
+    top: calc(50% - 2rem);
+}
+.content .form-salario{
+    margin-bottom: 4rem;
+}
+@media only screen and (min-width: 960px){
+    .content{
+        display: flex;
+        justify-content: space-between;
+    }
+    .content .group-field{
+        max-width: 35rem;
+    }
+    .content .form-salario{
+        width: 60%;
+        margin-bottom: 0rem;
+    }
+    .content .people-list{
+        width: 35%;
+    }
+    .button{
+        max-width: 20rem;
+    }
 }
