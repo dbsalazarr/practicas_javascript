@@ -38,6 +38,8 @@ function getSalarysOfPeople( list ) {
     return list.map( (person) => person.salary)
 }
 
+
+
 // CALCULANDO LA MEDIA
 
 function calcularMediana( list ){
@@ -62,18 +64,33 @@ function isEven( number ){
     return number % 2 == 0 ? true : false
 }
 
-// CALCULATE THE MEDIAN OF THE TOP TEN 10
-
-function medianTopTenSalarys( list ){
-
-    // sort list
-    list.sort( (value, nextValue) => value - nextValue)
-    let total, start, rest, top10, medianTopTen
+function getTenTopPeople( list ){
+    list.sort( (value, nextValue) => value.salary - nextValue.salary )
+    let total, start, rest, top10 
     total = list.length
     start = Math.floor( total * .9)
     rest = total - start
     top10 = list.splice(start, rest) 
+    return top10
+}
 
+// CALCULATE THE MEDIAN OF THE TOP TEN 10
+
+function cutTenTopPeople( list ){
+     // sort list
+     list.sort( (value, nextValue) => value - nextValue)
+     let total, start, rest, top10 
+     total = list.length
+     start = Math.floor( total * .9)
+     rest = total - start
+     top10 = list.splice(start, rest) 
+     return top10
+}
+
+function medianTopTenSalarys( list ){
+
+    let top10, medianTopTen
+    top10 = cutTenTopPeople( list )
     medianTopTen = calcularMediana( top10 )
     return medianTopTen
 }
@@ -82,7 +99,7 @@ function medianTopTenSalarys( list ){
 /*
     SHOW PEOPLE GENERATED
 */
-function showPeople( list ){
+function showPeople( list, idElement ){
     // Ordenando la lista
     list.sort( (value, nextValue) => { return value.salary - nextValue.salary })
     let table = "<table>"
@@ -95,7 +112,7 @@ function showPeople( list ){
     })
     table += "</table>"
 
-    document.getElementById("tablePeople").innerHTML = table;
+    document.getElementById( idElement ).innerHTML = table;
 }
 
 /* 
@@ -110,12 +127,20 @@ function resetInput( selectorElement ){
 }
 
 function showResult( message ){
-    const lblResult = document.getElementById("lblResultado")
+    const lblResult = document.getElementById( "lblResultado" )
     lblResult.innerHTML = message
 }
 
 function resetApp(){
-    
+    const reset1 = document.querySelector("#tablePeople")
+    const reset2 = document.querySelector("#tableTopTen")
+    const input1 = document.querySelector("#txtNumberPersons")
+    const lbl1 = document.querySelector("#lblResultado")
+    reset1.innerHTML = ""
+    reset2.innerHTML = ""
+    input1.value = ""
+    lbl1.innerHTML = ""
+
 }
 
 /* 
@@ -123,15 +148,24 @@ function resetApp(){
 */
 
 document.getElementById("btnGeneratePeople").addEventListener("click", () => {
-    let numberPersons, peopleList, result, listSalary
+    let numberPersons, peopleList, result, listSalary, tenPeople
     numberPersons = readData("#txtNumberPersons")
+
     peopleList = generatePeople( numberPersons)
-    showPeople( peopleList ) 
+    showPeople( peopleList, "tablePeople"  ) 
+
     result = ""
     listSalary = getSalarysOfPeople( peopleList )
     result += `<p>The median for all Salarys is:  ${ calcularMediana(listSalary)}</p> <br> `
     result += `<p> The median of top ten of Salary of persons is: ${medianTopTenSalarys(listSalary) } </p>`
+    
+    tenPeople = getTenTopPeople( peopleList )
+    showPeople( tenPeople, "tableTopTen"  )
 
-    showResult( result )
+    showResult( result)
     resetInput("#txtNumberPersons")
+})
+
+document.getElementById("btnReset").addEventListener("click", () => {
+    resetApp()
 })
