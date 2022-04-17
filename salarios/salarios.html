@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="./css/style.css" />
+
+	<title> Analisis de Salarios </title>
+</head>
+<body>
+	<section class="content">
+		<form action="" class="form-salario" id="formSalario">
+			<span>Finanzas App</span>
+			<h2>Median of Salarys in Perú</h2>
+			<div class="group-field">
+				<label for="txtNumberPersons"> Number People </label>
+				<input type="number" class="input-number" placeholder="25" id="txtNumberPersons"/>
+				<span class="icon-input"> <i class="fa-solid fa-people-group"></i> </span>
+			</div>
+			<div class="result">
+				<div id="tableTopTen"></div>
+				<label id="lblResultado"></label>
+			</div>
+			<button type="button" class="button secondary" id="btnReset"> Restart </button>
+			<button type="button" class="button primary" id="btnGeneratePeople"> Generate People </button>
+		</form>
+		<div class="people-list">
+			<h2>List of people</h2>
+			<div id="tablePeople"></div>
+		</div>
+	</section>
+
+
+	<script src="./js/data.js"></script>
+	<script src="./js/salarios.js"></script>
+	<script src="https://kit.fontawesome.com/69b5ee1732.js" crossorigin="anonymous"></script>
+</body>
+</html>
