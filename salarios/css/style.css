@@ -6,7 +6,7 @@
     --black: #000;
     --primary-color: #1D90F5;
     --secondary-color: #555B69;
-    --background-color-form: #272A37;
+    --background-color-form: hsl(229, 17%, 18%);
     --background-focus-input: #3D404B;
     --background-input: #323644;
     --background-body: #525561;
@@ -51,11 +51,21 @@ h2{
     font-size: 4rem
 }
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: var(--white);;
+    color: var(--background-body);;
     opacity: 1; /* Firefox */
-  }
+}
 ::-ms-input-placeholder { /* Microsoft Edge */
-color: var(--white);
+    color: var(--background-body);
+}
+table{
+    border-collapse: collapse;
+}
+table,
+tr, td{
+    border: 1px dashed var(--white);
+}
+table td{
+    padding: 1rem 1.2rem;
 }
 /* 
     UTILITARIES
@@ -79,6 +89,12 @@ color: var(--white);
     border-radius: 4rem;
     font-size: var(--sm);
     margin-bottom: 2rem;
+}
+.result{
+    margin-bottom: 2rem;
+}
+.button:active{
+    padding: 1.4rem;
 }
 .button.primary{
     background: var(--primary-color);
