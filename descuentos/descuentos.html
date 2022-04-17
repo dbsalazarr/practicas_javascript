@@ -9,28 +9,32 @@
 </head>
 <body>
     <article class="content">
-        <header class="cabecera">
-            <h2> Porcentajes y Descuentos </h2>
-            <p><span> Tienda Online</span> para el segundo taller práctico de JS</p>
-        </header>
-        <section>
-            <h3>Calcular el precio final a pagar por un producto</h3>
-            <form action="" id="frmDescuentos">
-                <div id="productList">
-                    <span class="arrow-select"></span>
-                </div>
-                <label for="txtPrecioProducto"> Precio del producto </label>
-                <input type="number" id="txtPrecioProducto" disabled>
-        
-                <label for="txtCupon"> Ingresar código cupón</label>
-                <div class="group-field">
-                    <input type="text" id="txtCupon">
-                    <button type="button" id="btnVerificarDescuento">Verificar Descuento</button>
-                </div>
-            </form>
-        </section>
-        
-        <label id="lblResultado"></label>
+        <div class="descuentos">
+            <header class="cabecera">
+                <h2> Porcentajes y Descuentos </h2>
+                <p><span> Tienda Online</span> para el segundo taller práctico de JS</p>
+            </header>
+            <section>
+                <h3>Calcular el precio final a pagar por un producto</h3>
+                <form action="" id="frmDescuentos">
+                    <div id="productList">
+                        <span class="arrow-select"></span>
+                    </div>
+                    <label for="txtPrecioProducto"> Precio del producto </label>
+                    <input type="number" id="txtPrecioProducto" disabled>
+            
+                    <label for="txtCupon"> Ingresar código cupón</label>
+                    <div class="group-field">
+                        <input type="text" id="txtCupon">
+                        <button type="button" id="btnVerificarDescuento">Verificar Descuento</button>
+                    </div>
+                </form>
+            </section>
+            
+            <label id="lblResultado"></label>
+        </div>
+        <div id="cuponList" class="cupon-list">
+        </div>
     </article>
     <script src="./js/descuentos.js"></script>
 </body>
