@@ -114,6 +114,10 @@ function showResult( message ){
     lblResult.innerHTML = message
 }
 
+function resetApp(){
+    
+}
+
 /* 
     EVENTOS
 */
