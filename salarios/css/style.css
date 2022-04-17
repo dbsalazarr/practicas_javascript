@@ -42,7 +42,7 @@ html{
 body{
     font: normal normal 1.6rem var(--primary-font);
     display: grid;
-    place-items: center;
+    justify-items: center;
     height: 100vh;
     background: var(--background-body);
     
@@ -74,7 +74,7 @@ table td{
     max-width: 1920px;
     width: 80%;
     margin: 0 auto;
-    min-height: 30rem;
+    height: min(80rem, 100%);
     background: var(--background-color-form);
     color: var(--white);
     border-radius: 4rem;
@@ -138,6 +138,9 @@ table td{
 }
 .content .form-salario{
     margin-bottom: 4rem;
+}
+.content .people-list{
+    overflow: auto;
 }
 @media only screen and (min-width: 960px){
     .content{
